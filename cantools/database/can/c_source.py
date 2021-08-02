@@ -752,11 +752,11 @@ class Message(object):
 
 
 def _canonical(value):
-    """Replace anything but 'a-z', 'A-Z' and '0-9' with '_'.
+    """Replace non unicodes with '_'.
 
     """
 
-    return re.sub(r'[^a-zA-Z0-9]', '_', value)
+    return re.sub(r'[^\w]', '_', value)
 
 
 def camel_to_snake_case(value):
